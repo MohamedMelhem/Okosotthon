@@ -11,7 +11,7 @@ namespace Okosotthon
         {
             throw new NotImplementedException();
         }
-
+         
         public override void ParancsVegrehajtasa(string parancs)
         {
             throw new NotImplementedException();

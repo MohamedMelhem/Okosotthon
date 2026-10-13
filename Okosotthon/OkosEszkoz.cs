@@ -14,7 +14,8 @@ namespace Okosotthon
 
         public OkosEszkoz(string azonosito, string nev)
         {
-
+            this.azonosito = azonosito;
+            this.nev = nev;
             onlineE = false;
             utolsoFrissites = DateTime.Now;
         }

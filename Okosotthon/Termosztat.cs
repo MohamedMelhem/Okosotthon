@@ -4,14 +4,16 @@ using System.Text;
 
 namespace Okosotthon
 {
-    public class Termosztat : OkosEszkoz
+    public class Termosztat : OkosEszkoz , Istatisztika, IIdozito
     {
         public double JelenlegiHomerseklet { get; private set; } = 21.0;
         public double CelHomerseklet { get; private set; }
+        private int idojefut = 0;
         public Termosztat(string azonosito, string nev, double celHomerseklet)
         : base(azonosito, nev)
         {
-            throw new NotImplementedException();
+           this.CelHomerseklet = celHomerseklet;
+            
         }
 
         public override void ParancsVegrehajtasa(string parancs)
@@ -39,5 +41,21 @@ namespace Okosotthon
                    this.CelHomerseklet <= 35.0;
         }
 
+        public string StatisztikatKeszit()
+        {
+            return $"A futes {this.idojefut}°C\n a jelenlegi hő: {this.CelHomerseklet}";
+
+        }
+
+        public void IdozitestBeallit(int perc)
+        {
+
+            this.idojefut = perc;
+        }
+
+        public int GetMaradtIdo()
+        {
+            return this.idojefut-10 ;
+        }
     }
 }
